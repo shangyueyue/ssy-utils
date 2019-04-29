@@ -21,4 +21,3 @@ const dataB = {
 
 const result = deepCompare(dataA, dataB);
 console.log(result);
-
