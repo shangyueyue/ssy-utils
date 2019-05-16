@@ -47,7 +47,8 @@
     "jsx-a11y/no-noninteractive-element-interactions": [0],
     "react/jsx-wrap-multilines": [0],
     "prettier/prettier": ["error"],
-    "func-names": [0]
+    "func-names": [0],
+    "no-plusplus": [0]
   },
   "parserOptions": {
     "ecmaFeatures": {
