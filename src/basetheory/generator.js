@@ -21,47 +21,47 @@
 // } while (!result.done);
 
 // generator
-function* func(subjects) {
-  let result;
-  for (const item of subjects) {
-    result = yield item;
-    console.log(result);
-  }
-}
-const subjects = ['js', 'html5', 'css'];
-const iterater = func(subjects);
-console.log(iterater.next());
-console.log(iterater.next(9));
-console.log(iterater.next(0));
-
-// function* helloWorldGenerator() {
-//   yield 'hello';
-//   yield 2 + 3;
-//   return 'ending';
+// function* func(subjects) {
+//   let result;
+//   for (const item of subjects) {
+//     result = yield item;
+//     console.log(result);
+//   }
 // }
+// const subjects = ['js', 'html5', 'css'];
+// const iterater = func(subjects);
+// console.log(iterater.next());
+// console.log(iterater.next(9));
+// console.log(iterater.next(0));
 
-// const hw = helloWorldGenerator();
-// console.log(hw.next());
-// console.log(hw.next());
-// console.log(hw.next());
-// console.log(hw.next());
+// // function* helloWorldGenerator() {
+// //   yield 'hello';
+// //   yield 2 + 3;
+// //   return 'ending';
+// // }
 
-function* flat(arr) {
-  for (const item of arr) {
-    if (Array.isArray(item)) {
-      yield* flat(item);
-    } else {
-      yield item;
-    }
-  }
-}
-const arr = [1, [[2, 3], 4], [5, 6]];
-const iterator = flat(arr);
-let result;
-do {
-  result = iterator.next();
-  console.log(result);
-} while (!result.done);
+// // const hw = helloWorldGenerator();
+// // console.log(hw.next());
+// // console.log(hw.next());
+// // console.log(hw.next());
+// // console.log(hw.next());
+
+// function* flat(arr) {
+//   for (const item of arr) {
+//     if (Array.isArray(item)) {
+//       yield* flat(item);
+//     } else {
+//       yield item;
+//     }
+//   }
+// }
+// const arr = [1, [[2, 3], 4], [5, 6]];
+// const iterator = flat(arr);
+// let result;
+// do {
+//   result = iterator.next();
+//   console.log(result);
+// } while (!result.done);
 
 // function* arrGenerator() {
 //   for (let i = 0; i < this.length; i++) {
@@ -107,3 +107,4 @@ do {
 // }
 // var it = main();
 // it.next();
+
