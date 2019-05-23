@@ -10,4 +10,7 @@ search.replace(reg2, (_, key, val) => {
 });
 console.log(obj);
 
-
+// demo3 匹配重复的
+const reg3 = /(\w+)\1+/;
+const str3 = 'abcabcabcf';
+console.log(str3.match(reg3)); // [ 'abcabcabc', 'abc', index: 0, input: 'abcabcabcf' ]
