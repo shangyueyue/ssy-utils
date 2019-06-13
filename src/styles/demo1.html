@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  .ulcontainer{
+    border:1px solid blue;
+    display:flex;
+    list-style: none;
+  }
+  .ulcontainer li:nth-child(3) ~ li {
+     background:#ddd;
+     margin-top: 10px;
+     border-bottom:1px solid red;
+  }
+  .container{
+    height: 500px;
+  }
+  .container .wrap {
+    height: 0;
+    overflow: hidden;
+    transition: 1s;
+  }
+  .container:hover .wrap {
+    height: 500px;
+    background: red;
+  }
+  </style>
+</head>
+<body>
+  <div>
+    <ul class="ulcontainer">
+      <li>111</li>
+      <li>222</li>
+      <li>333</li>
+      <li>444</li>
+      <li>555</li>
+    </ul>
+    <div class="container">
+      <div class="wrap">shangyy</div>
+    </div>
+  </div>
+</body>
+</html>

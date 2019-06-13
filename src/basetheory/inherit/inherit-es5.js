@@ -25,3 +25,26 @@ Child.prototype.contructor = Child;
 const child = new Child('shangyy', 25);
 
 child.sayName();
+console.log('----------------------------------------------');
+
+function Animal(height, weight) {
+  this.height = height;
+  this.weight = weight;
+}
+Animal.prototype.info = function() {
+  console.log('animal', this.height, this.weight);
+};
+
+function Dog(name, age) {
+  Animal.call(this);
+  this.name = name;
+  this.age = age;
+}
+
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.eat = function(food) {
+  console.log(this.name, 'eat', food);
+};
+
+const dog = new Dog('herry', 12);
+console.log(dog);
