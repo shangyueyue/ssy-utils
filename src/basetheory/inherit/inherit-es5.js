@@ -42,9 +42,21 @@ function Dog(name, age) {
 }
 
 Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;
 Dog.prototype.eat = function(food) {
   console.log(this.name, 'eat', food);
 };
 
 const dog = new Dog('herry', 12);
 console.log(dog);
+/*
+Dog {height: undefined, weight: undefined, name: "herry", age: 12}
+age: 12
+height: undefined
+name: "herry"
+weight: undefined
+__proto__: Animal
+constructor: ƒ Dog(name, age)
+eat: ƒ (food)
+__proto__: Object
+*/

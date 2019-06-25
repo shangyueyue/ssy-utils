@@ -1,4 +1,3 @@
-require('events');
 // 订阅发布模式
 class EventEmitter {
   constructor() {

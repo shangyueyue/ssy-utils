@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+     img {
+            display: block;
+            margin-bottom: 50px;
+            width: 400px;
+            height: 400px;
+        }
+  </style>
+</head>
+<body>
+  <img src="default.jpg" data-src="http://ww4.sinaimg.cn/large/006y8mN6gw1fa5obmqrmvj305k05k3yh.jpg" alt="">
+  <img src="default.jpg" data-src="http://ww4.sinaimg.cn/large/006y8mN6gw1fa5obmqrmvj305k05k3yh.jpg" alt="">
+  <img src="default.jpg" data-src="http://ww1.sinaimg.cn/large/006y8mN6gw1fa7kaed2hpj30sg0l9q54.jpg" alt="">
+  <img src="default.jpg" data-src="http://ww1.sinaimg.cn/large/006y8mN6gw1fa7kaed2hpj30sg0l9q54.jpg" alt="">
+  <img src="default.jpg" data-src="http://ww4.sinaimg.cn/large/006y8mN6gw1fa5obmqrmvj305k05k3yh.jpg" alt="">
+  <img src="default.jpg" data-src="http://ww1.sinaimg.cn/large/006y8mN6gw1fa5obmqrmvj305k05k3yh.jpg" alt="">
+  <img src="default.jpg" data-src="http://ww4.sinaimg.cn/large/006y8mN6gw1fa5obmqrmvj305k05k3yh.jpg" alt="">
+  <img src="default.jpg" data-src="http://ww1.sinaimg.cn/large/006y8mN6gw1fa5obmqrmvj305k05k3yh.jpg" alt="">
+  <img src="default.jpg" data-src="http://ww1.sinaimg.cn/large/006y8mN6gw1fa7kaed2hpj30sg0l9q54.jpg" alt="">
+  <img src="default.jpg" data-src="http://ww4.sinaimg.cn/large/006y8mN6gw1fa5obmqrmvj305k05k3yh.jpg" alt="">
+  <img src="default.jpg" data-src="http://ww1.sinaimg.cn/large/006y8mN6gw1fa5obmqrmvj305k05k3yh.jpg" alt="">
+  <script>
+    const imgs = document.getElementsByTagName('img');
+    console.log(imgs[0]);
+    lazyLoad()
+    document.addEventListener('scroll', throttle(lazyLoad,1000));
+    function lazyLoad(){
+     const viewHeight = window.innerHeight || window.documentElement.clientHeight;
+      for(let i=0;i<imgs.length; i++){
+        if(imgs[i].getBoundingClientRect().top< viewHeight){
+          console.log(imgs[i].getAttribute('src')=== 'default.jpg')
+          if(imgs[i].getAttribute('src')=== 'default.jpg'){
+            imgs[i].src = imgs[i].dataset.src;
+          }
+        }
+      }
+    }
+    function throttle(fn, time){
+      let timer=null;
+      return function(){
+        if(timer) return;
+        timer = setTimeout(()=>{
+          fn.apply(this,arguments);
+          clearTimeout(timer);
+          timer = null;
+        },time);
+      }
+    }
+  </script>
+</body>
+</html>

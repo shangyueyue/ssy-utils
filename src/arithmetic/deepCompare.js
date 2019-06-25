@@ -1,7 +1,7 @@
 // 深度比较
 
 function deepCompare(a, b) {
-  if (a === null || typeof a !== 'object' || a === null || typeof a !== 'object') {
+  if (a === null || typeof a !== 'object' || b === null || typeof b !== 'object') {
     return a === b;
   }
   const propsA = Object.getOwnPropertyDescriptors(a);

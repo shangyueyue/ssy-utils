@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    const content = '华安保险1996年成立,信息科技部是个核心部门,华安保险连续十二年盈利，信息科技部是公司的准备部门';
+    const root = document.getElementById('root');
+    const reg = /(华安保险)|(信息科技部)/g;
+    console.log(content.match(reg))
+    const newContent = content.replace(reg,(r0,r1,r2)=>{
+      if(r1){
+        return `<span style="color:red">${r1}</span>`
+      }
+      if(r2){
+        return `<span style="color:green">${r2}</span>`
+      }
+      return '';
+    })
+    root.innerHTML= newContent;
+  </script>
+</body>
+</html>
