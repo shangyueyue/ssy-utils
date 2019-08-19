@@ -9,7 +9,10 @@ function insertSort(arr) {
       $arr[j + 1] = $arr[j];
       j--;
     }
+    $arr[j + 1] = temp;
   }
+  return $arr;
 }
 const arr = [6, 2, 8, 4, 3, 5, 3];
-insertSort(arr);
+
+console.log(insertSort(arr));

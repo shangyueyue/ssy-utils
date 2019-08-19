@@ -25,3 +25,4 @@ console.log('________________');
 triangleFn(4);
 console.log('________________');
 triangleFn(20);
+

@@ -29,3 +29,4 @@ const p3 = Promise.resolve(1);
 Promise.myall([p1, p2, p3]).then(result => {
   console.log(result);
 });
+
